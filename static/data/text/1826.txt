@@ -1,0 +1,5 @@
+ Someone is holding a magazine.
+ A person is holding a magazine. The driver is holding the handle.
+ The driver who is holding the handle is talking the other person who is holding a magazine.
+ The person who is holding a magazine is talking to the driver who is holding the handle.
+ The driver who is holding the handle is talking the other person who is holding a magazine.

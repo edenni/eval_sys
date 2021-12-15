@@ -1,0 +1,5 @@
+ eddy puts a stethoscope on.
+ eddy examines poby with a stethoscope.
+ after examining poby eddy says poby's breathing is also good.
+ harry doesn't agree to eddy.
+ eddy asks loopy after listening to harry.

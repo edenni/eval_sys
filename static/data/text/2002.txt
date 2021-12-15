@@ -1,0 +1,5 @@
+ Eddy picks a book named Great explorer and Eddy opens the book.
+ Eddy flicks through the book.
+ Eddy finds out a map in the book and unfolds it.
+ Eddy finds out a map.
+ Eddy considers about what is the symbol X means in the map.

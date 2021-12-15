@@ -1,0 +1,5 @@
+ TuTu drives motors and tries to go forward.
+ TuTu says that wheels are stuck. It is impossible to move forward.
+ Suddenly Rody unfoldsRodyhands.
+ Rody caught the small snowball. Rody tries to pull it.
+ Rody falls down to the bottom.

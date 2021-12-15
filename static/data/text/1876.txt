@@ -1,0 +1,5 @@
+ Loopy is walking merrily on a snowy land.
+ Loopy comes across Poby. Loopy walks toward poby.
+ Loopy says hi to Poby. Poby is holding a net.
+ Poby says hi to Loopy. Poby is going fishing.
+ Crong and Eddy are running toward Loopy and Poby.

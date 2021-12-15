@@ -1,0 +1,5 @@
+ eddy is explaining something. eddy is waring a glove.
+ eddy is telling rody to throw the ball to eddy. eddy is waring a glove.
+ rody is picking up the ball. rody is about to throw the ball.
+ eddy stops rody from throwing the ball. rody is listening to eddy.
+ eddy is explaining to rody how to throw the ball. rody is listening to it. rody is trying to understand how to throw the ball.

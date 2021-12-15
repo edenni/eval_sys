@@ -1,0 +1,204 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/form_style.css">
+</head>
+<body>
+    <div class="titlebar">
+        <h1 style="font-size: 2em;">一貫性</h1>
+        <div class="titlebar">
+            <form>
+                <button type="button" onclick="hide()" style="margin-block-start: 1.7em; border: 0ch; background-color: #fff; margin-right: 20px; display: inline-block;">
+                    <img src="/static/truth.png" width="40" height="40">
+                </button>
+            </form>
+
+            <form action="/home" method="get">
+                <button type="submit" style="margin-block-start: 1.7em; border: 0ch; background-color: #fff;">
+                    <img src="/static/home.png" width="40" height="40">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="gt" class="container" style="display: none;">
+
+        <div class="gallery cf">
+            <!-- <input id="radio-1" class="radio-custom" name="radio-group1" value="0" type="radio"> -->
+            <label for="radio-1" class="radio-custom-label" style="margin-left: 2.5%;">
+
+                <div class="image">
+                    <figure>
+                        <img src= {{ gt[0] }}
+                            alt="" />
+                    </figure>
+
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src= {{ gt[1] }}
+                            alt="" />
+                    </figure>
+                </div>
+
+                <div class="image">
+                    <figure>
+                        <img src={{ gt[2] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ gt[3] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ gt[4] }}
+                            alt="" />
+                    </figure>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="gallery cf">
+            <input id="radio-1" class="radio-custom" name="radio-group1" value="0" type="radio">
+            <label for="radio-1" class="radio-custom-label">
+
+                <div class="image">
+                    <figure>
+                        <img src= {{ cps[0] }}
+                            alt="" />
+                    </figure>
+
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src= {{ cps[1] }}
+                            alt="" />
+                    </figure>
+                </div>
+
+                <div class="image">
+                    <figure>
+                        <img src={{ cps[2] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ cps[3] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ cps[4] }}
+                            alt="" />
+                    </figure>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="gallery cf">
+            <input id="radio-2" class="radio-custom" name="radio-group1" value="1" type="radio">
+            <label for="radio-2" class="radio-custom-label">
+
+                <div class="image">
+                    <figure>
+                        <img src={{ mgs[0] }}
+                            alt="" />
+                    </figure>
+
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ mgs[1] }}
+                            alt="" />
+                    </figure>
+                </div>
+
+                <div class="image">
+                    <figure>
+                        <img src={{ mgs[2] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ mgs[3] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ mgs[4] }}
+                            alt="" />
+                    </figure>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="gallery cf">
+            <input id="radio-3" class="radio-custom" name="radio-group1" value="2" type="radio">
+            <label for="radio-3" class="radio-custom-label">
+                <div class="image">
+                    <figure>
+                        <img src="/static/question-mark.png"
+                            alt="" />
+                    </figure>
+                    
+                </div>
+            </label>
+            </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="sendValue()">Next</button>
+</body>
+
+</html>
+
+<script>
+    function hide() {
+        var x = document.getElementById("gt");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function sendValue() {
+        var idtoname = {{d | tojson}}
+        
+        var number = document.querySelector('input[name="radio-group1"]:checked').value;
+        var results = idtoname[number]
+        let data = {
+            'section': 2,
+            'results': results
+        }
+
+        fetch('result', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+        .then((response) => {
+            if (response.ok) {
+                window.location.href = 'quality';
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .catch(error => {
+            console.error(error)
+        })
+    }
+</script>

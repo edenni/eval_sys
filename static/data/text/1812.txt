@@ -1,0 +1,5 @@
+ eddy is approaching to the red car to check it out.
+ eddy is checking the red car. eddy offers to help the car.
+ eddy is picking up some tools from the toolbox. eddy is offering to fix the red car. the car looks happy.
+ eddy is fixing the red car with red car tool.
+ eddy finished fixing the red car. eddy is closing the bonnet of the car. eddy is satisfied with red car work.

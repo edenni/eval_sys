@@ -1,0 +1,158 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body {
+            font-family: "Helvetica Neue", arial, sans-serif;
+            padding: 2em;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 800;
+            
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+
+        button {
+            font-size: 2em;
+        }
+
+        progress,
+        progress[role] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            background-size: auto;
+            height: 100px;
+            width: 100%;
+        }
+
+        .skill-list {
+            list-style: none;
+            margin: 0;
+            padding: 1em;
+        }
+
+        .skill {
+            margin-bottom: 3em;
+            position: relative;
+        }
+
+        .skill h3 {
+            color: #fff;
+            left: 1em;
+            line-height: 1;
+            position: absolute;
+            text-align: start;
+        }
+
+        .skill button {
+            background: rgba(255, 255, 255, 0.164);
+            color: rgb(255, 255, 255);
+            right: 0px;
+            line-height: 100px;
+            width: 100px;
+            position: absolute;
+            /* text-align: end; */
+            border: white;
+        }
+
+        .skill ::-webkit-progress-value {
+            -webkit-animation: bar-fill 2s;
+            width: 0px;
+        }
+
+        .skill-1::-webkit-progress-value {
+            background: #ff9e2c;
+        }
+
+        .skill-1::-moz-progress-bar {
+            background: #ff9e2c;
+        }
+
+        .skill-2::-webkit-progress-value {
+            background: #4ecdc4;
+        }
+
+        .skill-2::-moz-progress-bar {
+            background: #4ecdc4;
+        }
+
+        .skill-3::-webkit-progress-value {
+            background: #ff6b6b;
+        }
+
+        .skill-3::-moz-progress-bar {
+            background: #ff6b6b;
+        }
+
+        @-webkit-keyframes bar-fill {
+            0% {
+                width: 0;
+            }
+        }
+
+        @keyframes bar-fill {
+            0% {
+                width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="titlebar">
+        <h1>Welcome {{ user.username }}</h1>
+        <div class="titlebar">
+            <form action="/tutorial" method="get">
+                <button type="submit" style="margin-block-start: 1.7em; border: 0ch; background-color: #fff; margin-right: 20px; display: inline-block;">
+                    <img src="/static/tutorial.png" width="40" height="40">
+                </button>
+            </form>
+
+            <form action="/logout" method="get">
+                <button type="submit" style="margin-block-start: 1.7em; border: 0ch; background-color: #fff; display: inline-block;">
+                    <img src="/static/logout.png" width="40" height="40">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <ul class="skill-list">
+        <li class="skill">
+            <h3>実験1</h3>
+            <progress class="skill-1" max={{ required }} value={{ progress }}>
+                
+            </progress>
+            
+            <button type="submit" onclick="start()">Start</button>
+            
+        </li>
+
+        <li class="skill">
+            <h3>実験2</h3>
+            <progress class="skill-2" max="100" value=0>
+                <strong>Skill Level: 75%</strong>
+            </progress>
+            
+            <button type="submit">Start</button>
+        </li>
+    </ul>
+</body>
+</html>
+
+<script>
+    function start() {
+        var section = {{ user.section }}
+        var d = {0:"quality", 1:"relevance", 2:"consistency"}
+        window.location.href = d[section];
+    }
+</script>

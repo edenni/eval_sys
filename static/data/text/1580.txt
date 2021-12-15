@@ -1,0 +1,5 @@
+ eddy is walking out of the room.
+ rody is happy to sneeze.
+ eddy is not moved with rody's sneeze.
+ rody points somewhere and suggests eddy to go.
+ eddy runs to the direction rody went.

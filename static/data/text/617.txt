@@ -1,0 +1,5 @@
+ Eddy points a finger and says you are.
+ The robot greets to Eddy and says that nice to meet.
+ The robot says that please wait for a moment and prepare some food for them.
+ The robot serves some chocolate pies for them.
+ Harry feels happy and says it looks yummy.

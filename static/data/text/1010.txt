@@ -1,0 +1,5 @@
+ loopy is surprised to smell something strange.
+ loopy notices there are cookies on the table.
+ loopy is wondering who made cookies.
+ loopy tries a bite of cookie.
+ loopy thinks cookies are bad.

@@ -1,0 +1,5 @@
+ Rody finds the mini car on the floor.
+ Rody tries to ride it.
+ Rody finds the ball on the floor.
+ Rody comes to the ball and looks at it.
+ Rody kick it off and plays.

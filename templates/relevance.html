@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/form_style.css">
+</head>
+<body>
+    <div class="titlebar">
+        <h1 style="font-size: 2em;">整合性</h1>
+
+        <div class="titlebar">
+            <form>
+                <button type="button" onclick="trans()" style="margin-block-start: 1.7em; border: 0ch; background-color: #fff; margin-right: 20px; display: inline-block;">
+                    <img src="/static/translation.png" width="40" height="40">
+                </button>
+            </form>
+
+            <form>
+                <button type="button" onclick="hide()" style="margin-block-start: 1.7em; border: 0ch; background-color: #fff; margin-right: 20px; display: inline-block;">
+                    <img src="/static/truth.png" width="40" height="40">
+                </button>
+            </form>
+
+            <form action="/home" method="get">
+                <button type="submit" style="margin-block-start: 1.7em; border: 0ch; background-color: #fff;">
+                    <img src="/static/home.png" width="40" height="40">
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="gt" class="container" style="display: none;">
+
+        <div class="gallery cf">
+            <!-- <input id="radio-1" class="radio-custom" name="radio-group1" value="0" type="radio"> -->
+            <label class="radio-custom-label" style="margin-left: 10px;">
+                
+                <div class="image">
+                    <figure>
+                        <img src= {{ gt[0] }}
+                            alt="" />
+                    </figure>
+
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src= {{ gt[1] }}
+                            alt="" />
+                    </figure>
+                </div>
+
+                <div class="image">
+                    <figure>
+                        <img src={{ gt[2] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ gt[3] }}
+                            alt="" />
+                    </figure>
+                </div>
+                <div class="image">
+                    <figure>
+                        <img src={{ gt[4] }}
+                            alt="" />
+                    </figure>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    {% for i in range(5) %}
+    <div class="container">
+        <div class="gallery cf">
+            <h1>{{txts[i]}}</h1>
+            <div class="image">
+                <input id="radio-{{ 3*i + 1 }}" class="radio-custom" name="radio-group{{ i + 1 }}" value="0" type="radio">
+                <label for="radio-{{ 3*i + 1 }}" class="radio-custom-label">
+                    <figure>
+                        <img src= {{ mgs[i] }}
+                            alt="" />
+                    </figure>
+                </label>
+            </div>
+
+            <div class="image">
+                <input id="radio-{{ 3*i + 2 }}" class="radio-custom" name="radio-group{{ i + 1 }}" value="1" type="radio">
+                <label for="radio-{{ 3*i + 2 }}" class="radio-custom-label">
+                    <figure>
+                        <img src={{ cps[i] }}
+                            alt="" />
+                    </figure>
+                </label>
+            </div>
+
+            <div class="image">
+                <input id="radio-{{ 3*i + 3 }}" class="radio-custom" name="radio-group{{ i + 1 }}" value="2" type="radio">
+                <label for="radio-{{ 3*i + 3 }}" class="radio-custom-label">
+                    <figure>
+                        <img src="/static/question-mark.png"
+                            alt="" />
+                    </figure>
+                </label>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="sendValue()">Next</button>
+</body>
+
+</html>
+
+<script>
+    function hide() {
+        var x = document.getElementById("gt");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function trans() {
+        var text = {{ txts|safe }}
+        text = text.join('\r\n')
+        window.open("https://translate.google.com/?sl=en&tl=ja&text=" + text)
+    }
+
+    function sendValue() {
+        var idtoname = {{d | tojson}}
+        var results = []
+        for (let i = 1; i < 6; i++) {
+            number = document.querySelector('input[name="radio-group'+i+'"]:checked').value;
+            name = idtoname[number]
+            results.push(name)
+        }
+        console.log(results)
+
+        let data = {
+            'section': 1,
+            'results': results
+        }
+
+        fetch('result', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+        .then((response) => {
+            if (response.ok) {
+                window.location.href = 'consistency';
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .catch(error => {
+            console.error(error)
+        })
+    }
+
+   
+</script>

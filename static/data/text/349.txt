@@ -1,0 +1,5 @@
+ The gorilla lifts a stone with his left hand.
+ The robot also lifts a stone like the gorilla.
+ The gorilla tries to lift heavier stone.
+ The gorilla lifts up the heavier stone with his two hands.
+ The robot also lifted the stone like the gorilla.

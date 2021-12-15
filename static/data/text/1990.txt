@@ -1,0 +1,5 @@
+ A red car is on a snowed ground. A whale is on the sea. The sky is cloudy.
+ A red car is on a snowed ground. A whale gets into the sea. The sky is cloudy.
+ A red car is on the snowed ground and the sky is blue.
+ A red car is on the snowed ground and there are snowed trees and hills in front of it. The sea is behind it.
+ A red car is on the snowed ground and it starts to move. The sea is behind it.

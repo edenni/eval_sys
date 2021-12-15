@@ -1,0 +1,5 @@
+ After bats tease Pororo and his friends one red bat asks about who they are.
+ Loopy checks whether the bat asks about who they are.
+ Pororo introduces himself and his friends to the bats.
+ The bats want to know what Pororo's friends do in here.
+ Poby says that they tries to find the fruit of the sun tree.

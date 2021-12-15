@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cf:before,
+.cf:after {
+    content: '';
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+h1 {
+    /* text-transform: uppercase; */
+    text-align: center;
+    margin-top: 10px;
+    color: #444;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.container {
+    position: relative;
+    margin: 20px auto;
+    max-width: 90%;
+    background-color: #ffffff;
+    padding: 10px;
+    border: px solid #c5c5c5;
+}
+
+.gallery {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.galleryv {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image {
+    /* float:left not working in mozilla*/
+    display: inline-block;
+    /* padding: 2%; */
+    background-color: #fff;
+    /* margin: 0.5%; */
+    width: 18%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border: 1px solid #c3c3c3;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.imagev {
+    /* float:left not working in mozilla*/
+    /* display: inline-block; */
+    /* padding: 2%; */
+    background-color: #fff;
+    /* margin: 1%; */
+    width: 18%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border: 1px solid #c3c3c3;
+    cursor: pointer;
+}
+
+.image figure {
+    width: 90%;
+    margin: 5px;
+    
+}
+
+.image figure img {
+    width: 90%;
+}
+
+figcaption {
+    background-color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    font-family: sans-serif;
+    cursor: pointer;
+    color: slategrey;
+    max-width: 100%;
+    font-weight: bold;
+}
+
+figcaption:hover {
+    color: #fff;
+}
+
+
+body {
+    font-family: Raleway;
+    padding: 2em;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/* end only demo styles */
+
+.checkbox-custom,
+.radio-custom {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-custom,
+.checkbox-custom-label,
+.radio-custom,
+.radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.checkbox-custom-label,
+.radio-custom-label {
+    position: relative;
+    width: 90%;
+}
+
+.checkbox-custom+.checkbox-custom-label:before,
+.radio-custom+.radio-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+}
+
+.checkbox-custom:checked+.checkbox-custom-label:before {
+    background: rebeccapurple;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+.radio-custom+.radio-custom-label:before {
+    border-radius: 50%;
+}
+
+.radio-custom:checked+.radio-custom-label:before {
+    background: #ccc;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+
+.checkbox-custom:focus+.checkbox-custom-label,
+.radio-custom:focus+.radio-custom-label {
+    outline: 1px solid #ddd;
+    /* focus style */
+}

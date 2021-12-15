@@ -1,0 +1,5 @@
+ Loopy warns Poby that if Poby keeps moving Loopy cannot draw anymore.
+ Poby answers okay to hold this pose.
+ Harry asks Poby if Poby is hard to hang on his finger.
+ Poby says okay to put on his finger.
+ Harry will sing a song for Poby.

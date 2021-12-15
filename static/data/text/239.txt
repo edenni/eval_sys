@@ -1,0 +1,5 @@
+ Eddy tells Rody that Rody cannot eat food.
+ Rody understands that Rody cannot eat.
+ Rody tries to eat like other friends.
+ Rody finds a cup of milk.
+ Rody tries to drink milk. It is hard to drink a cup of milk.
